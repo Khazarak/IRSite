@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Insanity Rising</title>
 </head>
 <body>
-We are home!
+<h1>Welcome to Insanity Rising</h1>
+
+<h3>Latest News</h3>
+
+{% for post in posts.all %}
+
+{{post.title}}<br>
+{{post.content}}<br>
+
+{% endfor %}
 </body>
 </html>
