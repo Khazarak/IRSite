@@ -12,6 +12,8 @@
 {% for post in posts.all %}
 
 {{post.title}}<br>
+{{post.pub_date}}<br>
+<img src="{{ post.image.url }}"/>
 {{post.content}}<br>
 
 {% endfor %}

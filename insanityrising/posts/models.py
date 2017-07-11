@@ -7,3 +7,6 @@ class Post(models.Model):
     pub_date = models.DateField()
     content = models.TextField()
     images = models.ImageField()
+
+    def summary(self):
+        return self.content[:100]
