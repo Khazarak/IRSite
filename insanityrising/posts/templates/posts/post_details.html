@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
 
-      <nav class="navbar navbar-default">
+      <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Insanity Rising</a>
+                <a class="navbar-brand" href="{% url 'home' %}">Insanity Rising</a>
             </div>
         </div>
       </nav>
@@ -28,18 +28,16 @@
   </head>
   <body>
 
-        {{post.title}}
+        <h1 class="text-center">{{post.title}}</h1>
         <br>
-
         {{post.pub_date_nice}}
+        <br>
+
+        <img src="{{ post.images.url }}" class="img-responsive center-block" style="max-height:450px;"/>
 
         <br>
 
-        <img src="{{ post.image.url }}"/>
-
-        <br>
-
-        {{post.summary}}
+        {{post.content}}
         <br>
 
 <br>

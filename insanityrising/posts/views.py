@@ -10,5 +10,5 @@ def home(request):
 
 
 def post_details(request, post_id):
-    post = Post.objects.get(pk=post_id)
+    post = get_object_or_404(Post, pk=post_id)
     return render(request, 'posts/post_details.html', {'post':post})
