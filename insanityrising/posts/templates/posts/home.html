@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+       {% load static %}
+      <img src="{% static 'posts/Banner.png' %}" class="img-responsive" style="max-height:450px;">
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -12,13 +14,14 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{% url 'home' %}">
-                {% load static %}
-                <img alt="Brand" src="{% static 'posts/IRBanner.png' %}" class="img-responsive" style="max-height:30px;">
+                    <a class="navbar-brand" href="{% url 'home' %}">Insanity Rising</a>
                 </a>
             </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a>About</a></li>
+                        <li><a href="{% url 'apply' %}">Apply</a></li>
+                        <li><a>Forums</a></li>
                         <li><a href="https://discord.gg/Kfe5Gys">Community Discord</a></li>
                     </ul>
                 </div>
@@ -45,11 +48,6 @@
 
   <div class="container">
       <div class="text-center"></div>
-        <h1 class="text-center">Welcome To The Insanity Rising Community Site</h1>
-        {% load static %}
-        <img src="{% static 'posts/home.jpg' %}" class="img-responsive center-block" style="max-height:450px;"/>
-
-
         <div class="text-center"></div>
             <h3>Latest News</h3>
             {% for post in posts.all %}
