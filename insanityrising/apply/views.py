@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Apply
 
 # Create your views here.
@@ -12,6 +12,6 @@ def apply(request):
         apply_inst.applicant_favmmo = request.POST['favoritemmo']
         apply_inst.about_you = request.POST['about_you']
         apply_inst.save()
-        return HttpResponse("Application submitted")
+        return HttpResponseRedirect("Application submitted")
     else:
         return render(request, 'apply/apply.html')

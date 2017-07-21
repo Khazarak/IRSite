@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<form action="{% url 'apply' %}" method="POST">
+<form action="{% url 'apply:apply' %}" method="POST">
     {% csrf_token %}
     <h4>Character Name:</h4><br>
     <input type="text" name="character_name"/><br>

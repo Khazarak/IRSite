@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
        {% load static %}
       <img src="{% static 'posts/Banner.png' %}" class="img-responsive" style="max-height:450px;">
       <nav class="navbar navbar-inverse">
@@ -13,14 +14,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url 'home' %}">
-                    <a class="navbar-brand" href="{% url 'home' %}">Insanity Rising</a>
+                <a class="navbar-brand" href="{% url 'posts:home' %}">
+                    <a class="navbar-brand" href="{% url 'posts:home' %}">Insanity Rising</a>
                 </a>
             </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a>About</a></li>
-                        <li><a href="{% url 'apply' %}">Apply</a></li>
+                        <li><a href="{% url 'apply:apply' %}">Apply</a></li>
                         <li><a>Forums</a></li>
                         <li><a>Twitter</a></li>
                         <li><a href="https://discord.gg/Kfe5Gys">Community Discord</a></li>
@@ -28,6 +29,7 @@
                 </div>
         </div>
       </nav>
+
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,7 +55,7 @@
         <div class="panel panel-default">
             {% for post in posts.all %}
             <div class="panel-body">
-                <a href="{% url 'post_details' post.id %}"> {{post.title}} </a>
+                <a href="{% url 'posts:post_details' post.id %}"> {{post.title}} </a>
             <br>
 
             {{post.pub_date_nice}}
