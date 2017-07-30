@@ -1,0 +1,47 @@
+
+    div.content {
+        margin-left: 100px;
+        margin-right: 100px;
+        height: 10em;
+        position: relative
+        color: red;
+    }
+
+    div.container3 {
+       height: 10em;
+       position: relative }
+
+    #signup {
+      background-color: blue;
+    }
+
+    div.container4 {
+      height: 10em;
+      position: relative }
+
+    div.container4 p {
+      margin: 0;
+      background: yellow;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%) }
+
+      #signupForm {
+        border-radius: 25px;
+        border: 4px solid #FF0000;
+        padding: 20px;
+        width: 200px;
+        height: 400px;
+      }
+
+      .container-table {
+        display: table;
+
+      }
+      .vertical-center-row {
+        display: table-cell;
+        vertical-align: middle;
+        margin: 20px;
+      }

@@ -3,22 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Signup</title>
+      <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/accounts.css' %}" />
 </head>
-<body>
-{% if error %}
-{{ error }}
-{% endif %}
-<br />
-<br />
-<form action="{% url 'signup' %}" method="POST">
+<body style="background-color: #616161;">
+  <div class="container-fluid" style="margin: 100px;">
+    <div class="well well-sm">
+      <h3 class = "text-center">Create Account</h3>
+    <form action="{% url 'signup' %}" class="text-center" method="POST" >
     {% csrf_token %}
-    <h4>Username:</h4><br />
-    <input type="text" name="name"/><br />
-    <h4>Password:</h4><br />
-    <input type="password" name="password1"/><br />
-    <h4>Confirm Password:</h4><br>
-    <input type="password" name="password2"/><br />
-    <input type="submit" value="Create"/><br />
-</form>
+      <label for="emailId">Email address</label>
+      <input type="email" class="form-control col-xs-4" id="emailId" placeholder="Email" name="email"><br />
+      <br />
+      <label for="usernameId">Username</label>
+      <input type="text" class="form-control col-xs-4" id="usernameId" placeholder="Username" name="name"><br />
+      <br />
+      <label for="password1Id">Password</label>
+      <input type="password" class="form-control col-xs-4" id="password1Id" placeholder="Password" name="passowrd1"><br />
+      <br />
+      <label for="password2Id">Confirm Password</label>
+      <input type="password" class="form-control col-xs-4" id="password2Id" placeholder="Password" name="password2"><br />
+      <br />
+      <button type="submit" class="btn btn-default" id="submitButton">Create</button>
+    </form>
+  </div>
+  <br />
+  <br />
+  {% if error %}
+  {{ error }}
+  {% endif %}
+
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </body>
 </html>

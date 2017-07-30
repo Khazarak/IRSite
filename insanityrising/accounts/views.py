@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group, Permission
 from django.contrib.auth import authenticate, login
 
 
@@ -26,6 +26,9 @@ def signup(request):
                 return render(request, 'accounts/signup.html', {'error': 'Username ' + request.POST['name'] + ' already in use'})
             except User.DoesNotExist:
                  User.objects.create_user(request.POST['name'], password=request.POST['password1'])
+                 user = User.objects.get(username=request.POST['name'])
+                 public_group = Group.objects.get(name='Public')
+                 user.groups.add(public_group)
                  login(request, user)
                  return render(request, 'accounts/signup.html')
         else:

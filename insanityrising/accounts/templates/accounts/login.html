@@ -3,20 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    {% load static %}
 </head>
 <body>
 
-{% if error %}
-{{ error }}
-{% endif %}
-<form action="{% url 'userlogin' %}" method="POST">
-    {% csrf_token %}
-    <h4>Username:</h4><br>
-    <input type="text" name="name"/><br>
-    <h4>Password:</h4><br>
-    <input type="password" name="password"/><br>
+<body style="background-color: #616161;">
+  <div class="container-fluid" style="margin: 100px;">
+    <div class="well well-md">
+      <h3>Login</h3><br />
+      <form action="{% url 'userlogin' %}" class="text-center" method="POST" >
+      {% csrf_token %}
+        <div class="row">
+          <div class="col-sm-6">
+            <label for="usernameId">Username</label> <br />
+            <input type="text" class="form-control" id="usernameId" placeholder="Username" name="name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <label for="password1Id">Password</label>
+            <input type="password" class="form-control" id="password1Id" placeholder="Password" name="passowrd">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <button type="submit" class="btn btn-default" id="submitButton">Login</button>
+          </div>
+        </div>
+    </form>
+  </div>
+  <br />
+  <br />
+  {% if error %}
+  {{ error }}
+  {% endif %}
 
-    <input type="submit" value="Login"/><br>
-</form>
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </body>
 </html>
